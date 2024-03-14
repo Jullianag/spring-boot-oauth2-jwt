@@ -71,6 +71,7 @@ public class AuthorizationServerConfig {
 	@Order(2)
 	public SecurityFilterChain asSecurityFilterChain(HttpSecurity http) throws Exception {
 
+		// integração do spring security com o OAuth2
 		OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
 
 		// @formatter:off

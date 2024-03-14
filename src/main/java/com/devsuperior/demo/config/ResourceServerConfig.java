@@ -40,6 +40,7 @@ public class ResourceServerConfig {
 		return http.build();
 	}
 
+	// permissões nos end points
 	@Bean
 	@Order(3)
 	public SecurityFilterChain rsSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -62,6 +63,7 @@ public class ResourceServerConfig {
 		return jwtAuthenticationConverter;
 	}
 
+	// configurações de CORS
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 
@@ -77,6 +79,8 @@ public class ResourceServerConfig {
 		source.registerCorsConfiguration("/**", corsConfig);
 		return source;
 	}
+
+	// configurações de CORS
 
 	@Bean
 	FilterRegistrationBean<CorsFilter> corsFilter() {
